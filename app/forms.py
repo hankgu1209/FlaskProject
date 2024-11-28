@@ -1,10 +1,13 @@
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm # 从flask_wtf 包倒入FlaskForm类
-from wtforms import StringField,PasswordField,BooleanField,SubmitField
-from wtforms.validators import DataRequired, EqualTo,Email,ValidationError
+from wtforms import StringField,PasswordField,BooleanField,SubmitField,TextAreaField
+from wtforms.validators import DataRequired, EqualTo,Email,ValidationError,Length
 from app.models import User
 
-
+class EditProfileForm(FlaskForm):
+	username = StringField('Username', validators=[DataRequired()])
+	about_me = TextAreaField('About_me', validators=[Length(min=0, max=140)])
+	submit = SubmitField('Submit')
 
 class LoginForm(FlaskForm):
     username = StringField('Username',validators=[DataRequired()])
