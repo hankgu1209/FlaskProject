@@ -6,6 +6,10 @@ import pymysql
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
+from logging.handlers import RotatingFileHandler
+import logging
+import os
 pymysql.install_as_MySQLdb()
 
 
@@ -18,13 +22,29 @@ login.login_view='login'
 mail = Mail(app)
 # bootstrap 初始化
 bootstrp = Bootstrap(app)
+moment = Moment(app)
 
 db = SQLAlchemy(app)#数据库对象
 migrate = Migrate(app, db)#迁移引擎对象
 
 
-
 #从app包中导入模块routes
-from app import routes,models
+from app import routes,models,errors
 #注：上面两个app是完全不同的东西。两者都是纯粹约定俗成的命名，可重命名其他内容。
+
+
+if not app.debug:
+    # ...
+
+    if not os.path.exists('logs'):
+        os.mkdir('logs')
+    file_handler = RotatingFileHandler('logs/microblog.log', maxBytes=10240,
+                                       backupCount=10)
+    file_handler.setFormatter(logging.Formatter(
+        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+    file_handler.setLevel(logging.INFO)
+    app.logger.addHandler(file_handler)
+
+    app.logger.setLevel(logging.INFO)
+    app.logger.info('Microblog startup')
 
