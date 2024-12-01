@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 import pymysql
 from flask_login import LoginManager
 from flask_mail import Mail
+from flask_bootstrap import Bootstrap
 pymysql.install_as_MySQLdb()
 
 
@@ -15,6 +16,8 @@ login = LoginManager(app)
 login.login_view='login'
 # print('等会谁（哪个包或模块）在使用我：',__name__)
 mail = Mail(app)
+# bootstrap 初始化
+bootstrp = Bootstrap(app)
 
 db = SQLAlchemy(app)#数据库对象
 migrate = Migrate(app, db)#迁移引擎对象
