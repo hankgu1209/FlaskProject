@@ -1,0 +1,86 @@
+2024-12-02 21:05:18,934 ERROR: Exception on /index [GET] [in /Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/routes.py", line 35, in index
+    next_url = url_for('index',page=posts.next_num) if posts.has_next else None
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/jinja2/environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/templates/base.html", line 1, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/templates/base.html", line 54, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/templates/index.html", line 12, in block 'app_content'
+    {% include '_post.html' %}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/templates/_post.html", line 17, in top-level template code
+    <br><br>
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/jinja2/utils.py", line 83, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: '_' is undefined
+2024-12-02 21:10:31,806 ERROR: Exception on /index [GET] [in /Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/routes.py", line 35, in index
+    next_url = url_for('index',page=posts.next_num) if posts.has_next else None
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/jinja2/environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/templates/base.html", line 1, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/templates/base.html", line 54, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/templates/index.html", line 12, in block 'app_content'
+    {% include '_post.html' %}
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/哔哩哔哩教程/Flask项目/app/templates/_post.html", line 17, in top-level template code
+    <br><br>
+  File "/Users/chenjiali/Flask开发实战/Flask_dev_web/.venv/lib/python3.9/site-packages/jinja2/utils.py", line 83, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: '_' is undefined

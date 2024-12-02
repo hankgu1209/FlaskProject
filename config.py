@@ -25,3 +25,7 @@ class Config:
     # 确保 MAIL_USE_TLS 为 True，MAIL_USE_SSL 为 False
     if MAIL_USE_TLS and MAIL_USE_SSL:
         raise ValueError("Cannot use both TLS and SSL at the same time.")
+
+    APPID = os.environ.get('APPID')
+    BD_TRANSLATOR_KEY = os.environ.get('BD_TRANSLATOR_KEY')
+    LANGUAGES = ['en', 'zh','ja','es']

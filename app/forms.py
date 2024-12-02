@@ -2,6 +2,7 @@ from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm # 从flask_wtf 包倒入FlaskForm类
 from wtforms import StringField,PasswordField,BooleanField,SubmitField,TextAreaField
 from wtforms.validators import DataRequired, EqualTo,Email,ValidationError,Length
+from flask_babel import lazy_gettext as _l
 from app.models import User
 
 class EditProfileForm(FlaskForm):
@@ -10,7 +11,7 @@ class EditProfileForm(FlaskForm):
 	submit = SubmitField('Submit')
 
 class LoginForm(FlaskForm):
-    username = StringField('Username',validators=[DataRequired()])
+    username = StringField(_l('Username'), validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
